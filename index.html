@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header id="header">
+        <p id="logo">Fes Viagens</p>
+
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ROMA</a></li>
+                <li><a href="#">MOSCOU</a></li>
+                <li><a href="#">EGITO</a></li>
+            </ul>
+
+            <button id="btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+<main class="content">
+        <div class="slides">
+
+            <input type="radio" name="slide" id="russia" checked>
+            <input type="radio" name="slide" id="egito">
+            <input type="radio" name="slide" id="roma">
+
+
+            <section class="slide s1">
+                <img src="imagens/moscou1.jpg" alt="" class="ibagem">
+            </section>
+            <section class="slide s2" >
+                <img src="imagens/egito1.jpg" alt="" class="ibagem">
+            </section>
+            <section class="slide s3">
+                <img src="imagens/roma1.jpg" alt="" class="ibagem">
+            </section>
+
+            <div class="alternadores">
+        
+                <label id="neve alternado" for="russia">
+                    <i class="fa-solid fa-snowflake alternado"></i>
+                </label>
+                <label id="piramide" for="egito">
+                    <i class="fa-solid fa-ankh alternado"></i>
+                </label>
+                <label id="pizza" for="roma">
+                    <i class="fa-solid fa-pizza-slice alternado"></i>
+                </label>
+            </div>  
+        </div>
+
+        
+</main>
+
+    <footer>
+
+    </footer>
+
+
+    <script src="home.js"></script>
+</body>
+</html>
