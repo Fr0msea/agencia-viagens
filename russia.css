@@ -2,73 +2,83 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    --cor1 : #E7D6C5;
+    --cor2 : #E1C2A3;
+    --cor3 : #D8AD83;
+    --cor4 : #AB815F;
+    --cor5 : #8E5D3E;
+
 }
 /* HEADER*/
+
+
 a{
     text-decoration: none;
-    color: #36311F;
-    font-weight: bold;
+    color: var(--cor1);
+    font-size: 1.5em;
 }
 
-a:hover{
-    background-color: #C73E1D;
-    color: #EDB88B;
-    transition: 1s;
+.logo{
+    color: var(--cor2);
+    font-size: 1.8em;
 }
-
-#logo{
-    font-size: 1.5rem;
-    font-weight: bolder;
+li{
+    list-style: none;
 }
+header{
+    height: 100px;
+    width: 100%;
+    background-color: salmon;
 
-#header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    padding: 20px;
-    background-color: #EDB88B;
-    padding: 1rem;
-    height: 12vh;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 100;
 }
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: var(--cor5);
 
-#nav{
-    margin-right: 20px;
-}
-
-#menu{
-    list-style: none;
     display: flex;
-    gap: 4rem;
+    justify-content: space-around;
+    align-items: center;
 }
 
-#menu a{
-    padding: .5rem;
-    border-radius: 10px;
+
+
+.nav-bar ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px ;
+    padding: 10px;
 }
 
-#btn{
+
+.menu{
+    font-size: 40px;
     display: none;
 }
+
+
 
 /*MAIN*/
 main{
 
 }
-h1{
-    height: 88vh;
+.titulo{
+    height: calc(100vh - 100px);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: darkslateblue;
+    background-color: var(--cor4);
+    color: var(--cor1);
     text-transform: uppercase;
     
 }
 .capsula{
     padding: 20px;
-    width: 100%;
+    width: 78%;
     height: 600px;
     display: flex;
     flex-direction: row;
@@ -79,6 +89,14 @@ h1{
     align-items: center;
     /*margin-top: -100px;*/
     margin-bottom: 22px;
+}
+
+.capsulao{
+    width: 100%;
+    background-color: var(--cor4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .capsula h2{
@@ -95,7 +113,7 @@ h1{
 }
 
 .capsula:nth-child(odd){
-    background: #C73E1D;
+    background: var(--cor4);
 }
 
 .reveal{
@@ -113,66 +131,79 @@ h1{
 
 @media (max-width:700px) {
     /*HEADER*/
-    #btn{
-        display: flex;
-        cursor: pointer;
-        border: none;
-        font-size: 2.5rem;
-        background-color: transparent;
+
+    body{
+        overflow-x: hidden;
+        transition: none;
+    }
+    .container{
+        position: relative;
     }
 
-    #menu{
+    .nav-bar{
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background-color: var(--cor2);
+
+        width: 100%;
+        height: calc(100vh - 100px);
+
+        transform: translateX(100%);
+        transition: all 0.4s ease-out;
+    }
+
+    .sumi{
+    transform: translateX(0%);
+}
+
+    .nav-bar ul{
         display: flex;
         flex-direction: column;
-        position: absolute;
-        top: 9vh;
-        right: 0;
-        width: 100vw;
+        gap: 60px;
         align-items: center;
-        height: 0px;
-        transition: 0.6s;
-        z-index: 1000;
-        background-color: #C73E1D;
-        visibility: hidden;
-        overflow-y: hidden;
+        margin-top: 20px;
+        text-align: center;
     }
 
-    #nav.active #menu{
-       /* height: calc(100vh - 80px);
-        visibility: visible;
-        overflow-y: auto;
-        padding-top: 20px;*/
+    .nav-bar li{
+        padding: 20px;
 
-        height: 90vh;
-    width: 104vw;
-    visibility: visible;
-    overflow-y: auto;
-    padding-top: 0px;
-    text-align: center;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: nowrap;
-    align-items: center;
+        border-bottom: 2px solid black;
+        width: 50%;
     }
 
-    #menu a{
-        padding: 2rem 8rem;
-        margin: 0 1rem;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.05);
-        color: white;
+    .nav-bar li a{
+        color: var(--cor5);
     }
 
-    #menu a:hover{
-        background-color: aqua;
-        color: black;
+    .nav-bar li:hover{
+        background-color: var(--cor5);
+
+        border-radius: 5px;
     }
 
+    .nav-bar a:hover{
+        color: var(--cor1);
+    }
+
+    .menu{
+        display: flex;
+        color: var(--cor2);
+    }
+
+    
     /*MAIN*/
+
+
     .capsula{
         flex-wrap: wrap;
+        height: 700px;
+        width: 90%;
+ 
     }
+
+
 
     .capsula img{
         width: 100%;
@@ -181,4 +212,8 @@ h1{
     main h1{
         margin-bottom: 20px;
     }
+
+
+
 }
+
